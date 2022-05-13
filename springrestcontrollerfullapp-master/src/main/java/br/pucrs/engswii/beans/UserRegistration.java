@@ -33,6 +33,7 @@ public class UserRegistration {
 				return "Error - ID alread exists";
 			}
 		}
+
 		userRecords.add(newUser);
 		return "New user successfully created";
 	}

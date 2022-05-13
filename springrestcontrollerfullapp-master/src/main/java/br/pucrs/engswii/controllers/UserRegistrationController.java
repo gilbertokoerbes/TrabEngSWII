@@ -18,18 +18,18 @@ public class UserRegistrationController {
 	//  @RequestMapping(method = RequestMethod.POST, value="/register/student")
 	//
 	//  @ResponseBody
-	@PostMapping("/register/student")
-	public StudentRegistrationReply registerStudent(@RequestBody Student student) {
+	@PostMapping("/register/user")
+	public UserRegistrationReply registerStudent(@RequestBody User user) {
 		System.out.println("In registerStudent");
-		StudentRegistrationReply stdregreply = new StudentRegistrationReply();           
-		StudentRegistration.getInstance().add(student);
+		UserRegistrationReply usrregreply = new UserRegistrationReply();           
+		String statusReply = UserRegistration.getInstance().add(user);
+		System.out.println(statusReply);
 		//We are setting the below value just to reply a message back to the caller
-		stdregreply.setName(student.getName());
-		stdregreply.setAge(student.getAge());
-		stdregreply.setRegistrationNumber(student.getRegistrationNumber());
-		stdregreply.setRegistrationStatus("Successful");
+		usrregreply.setUserID(user.getUserID());;
+		usrregreply.setPassword(user.getPassword());
+		usrregreply.setRegistrationStatus("Successful");
 
-		return stdregreply;
+		return usrregreply;
 	}
 
 }
