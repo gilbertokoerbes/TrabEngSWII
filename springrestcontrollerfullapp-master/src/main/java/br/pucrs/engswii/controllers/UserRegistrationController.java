@@ -27,7 +27,7 @@ public class UserRegistrationController {
 		//We are setting the below value just to reply a message back to the caller
 		usrregreply.setUserID(user.getUserID());;
 		usrregreply.setPassword(user.getPassword());
-		usrregreply.setRegistrationStatus("Successful");
+		usrregreply.setRegistrationStatus(statusReply);
 
 		return usrregreply;
 	}
